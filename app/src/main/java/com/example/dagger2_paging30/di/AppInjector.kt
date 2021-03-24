@@ -9,8 +9,9 @@ import androidx.fragment.app.FragmentManager
 import com.example.dagger2_paging30.App
 import dagger.android.AndroidInjection
 import dagger.android.AndroidInjector
+import dagger.android.HasAndroidInjector
 import dagger.android.support.AndroidSupportInjection
-import dagger.android.support.HasSupportFragmentInjector
+
 
 object AppInjector {
     fun init(app:App){
@@ -40,7 +41,7 @@ object AppInjector {
     }
 
     private fun handleActivity(activity: Activity){
-        if (activity is HasSupportFragmentInjector){
+        if (activity is HasAndroidInjector){
             AndroidInjection.inject(activity)
 
         }
