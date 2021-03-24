@@ -19,6 +19,7 @@ class App : Application(), HasActivityInjector {
     }
     override fun activityInjector() = dispatchingAndroidInjector
 
+//Dagger 2.16
 
 
 }
