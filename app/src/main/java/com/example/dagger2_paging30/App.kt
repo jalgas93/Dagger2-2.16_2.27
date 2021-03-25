@@ -3,22 +3,17 @@ package com.example.dagger2_paging30
 import android.app.Activity
 import android.app.Application
 import com.example.dagger2_paging30.di.AppInjector
+import com.example.dagger2_paging30.di.DaggerAppCommponent
 import dagger.android.AndroidInjector
+import dagger.android.DaggerApplication
 import dagger.android.DispatchingAndroidInjector
-import dagger.android.HasActivityInjector
+
 import javax.inject.Inject
 
-class App : Application(), HasActivityInjector {
+class App : DaggerApplication() {
 
-    @Inject
-    lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Activity>
-
-    override fun onCreate() {
-        super.onCreate()
-       AppInjector.init(this)
-    }
-    override fun activityInjector() = dispatchingAndroidInjector
-
+    private val applicationInjector = DaggerAppCommponent.builder().application(this).build()
+    override fun applicationInjector(): AndroidInjector<out DaggerApplication> = applicationInjector
 
 
 }

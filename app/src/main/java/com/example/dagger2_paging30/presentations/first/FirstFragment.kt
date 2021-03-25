@@ -12,9 +12,10 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.dagger2_paging30.R
 import com.example.dagger2_paging30.databinding.FragmentFirstBinding
 import com.example.dagger2_paging30.di.Injectable
+import dagger.android.support.DaggerFragment
 import javax.inject.Inject
 
-class FirstFragment : Fragment(), Injectable {
+class FirstFragment : DaggerFragment() {
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
 
