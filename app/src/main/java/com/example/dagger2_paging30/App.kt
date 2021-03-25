@@ -7,7 +7,6 @@ import com.example.dagger2_paging30.di.DaggerAppCommponent
 import dagger.android.AndroidInjector
 import dagger.android.DaggerApplication
 import dagger.android.DispatchingAndroidInjector
-
 import javax.inject.Inject
 
 class App : DaggerApplication() {
